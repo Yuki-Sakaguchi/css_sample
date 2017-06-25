@@ -1,0 +1,830 @@
+@charset "UTF-8";
+/* =================
+  bourbon
+================= */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  appearance: none;
+  background-color: #1565c0;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+  background-color: #11519a;
+  color: #fff;
+}
+
+button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
+  outline: 3px solid rgba(21, 101, 192, 0.6);
+  outline-offset: 2px;
+}
+
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: #1565c0;
+}
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 16px;
+}
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover {
+  border-color: #b1b1b1;
+}
+
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus {
+  border-color: #1565c0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(21, 101, 192, 0.7);
+  outline: none;
+}
+
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover {
+  border: 1px solid #ddd;
+}
+
+input[type="color"]::placeholder, input[type="date"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder, input[type="email"]::placeholder, input[type="month"]::placeholder, input[type="number"]::placeholder, input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="tel"]::placeholder, input[type="text"]::placeholder, input[type="time"]::placeholder, input[type="url"]::placeholder, input[type="week"]::placeholder, input:not([type])::placeholder, textarea::placeholder {
+  color: #858585;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+select {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+[type="checkbox"]:focus,
+[type="radio"]:focus,
+[type="file"]:focus,
+select:focus {
+  outline: 3px solid rgba(21, 101, 192, 0.6);
+  outline-offset: 2px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+html {
+  color: #333;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1.333em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+p {
+  margin: 0 0 0.75em;
+}
+
+a {
+  color: #1565c0;
+  text-decoration-skip: ink;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: #104c90;
+}
+
+a:focus {
+  outline: 3px solid rgba(21, 101, 192, 0.6);
+  outline-offset: 2px;
+}
+
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* =================
+  common
+================= */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  padding: 40px 0;
+}
+
+h1 {
+  color: white;
+  background: #5091C1;
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  padding: 80px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  letter-spacing: 20px;
+}
+
+/* =================
+  section1
+================= */
+.section1 .container {
+  text-align: center;
+  color: white;
+}
+
+.section1 p {
+  color: turquoise;
+}
+
+.section1 .component {
+  display: inline-block;
+  line-height: 40px;
+  perspective: 500px;
+  /* 遠近感を設定（ユーザとの距離らしいので、数値が小さいと近い = 遠近感が大きくなる */
+}
+
+.section1 .face {
+  display: inline-block;
+  width: 40px;
+  color: white;
+  text-decoration: none;
+  background: turquoise;
+  cursor: default;
+  transition: 0.3s;
+  transform-origin: center top;
+  /* トランスフォームする原点を設定  transform-origin: 水平報告 垂直方向; */
+  transform-style: preserve-3d;
+  /* デフォルトは2dなので3dにする。transformの表現に2dを使うか3dを使うか */
+  position: relative;
+}
+
+.section1 .face:after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: darkcyan;
+  content: attr(data-hover);
+  /* 「data-」は自分でつけた属性名。attr()を使えば、cssから属性にアクセスできる） */
+  transform: rotateX(-90deg);
+  transform-origin: center top;
+}
+
+.section1 .face:hover, .section1 .face:focus {
+  transform: rotateX(90deg) translateY(-20px);
+  /* rotateX()でx軸方向の回転, translateY()でy軸報告の移動 */
+}
+
+.section1 .face:hover:after, .section1 .face:focus:after {
+  background: lightseagreen;
+}
+
+/* =================
+  section2
+================= */
+.section2 {
+  background: #75c379;
+}
+
+.section2 img {
+  vertical-align: bottom;
+}
+
+.section2 .container {
+  width: 400px;
+  margin: 20px auto;
+  cursor: default;
+}
+
+.section2 .container:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.section2 .figure {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+}
+
+.section2 .figure:hover .figure-title,
+.section2 .figure:hover .figure-caption {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.section2 .figure:hover .figure-title {
+  transition-delay: 0.1s;
+}
+
+.section2 .figure:hover .figure-caption {
+  transition-delay: 0.2s;
+}
+
+.section2 .figure:hover .info-link {
+  top: 300px;
+  transition-delay: 0.4s;
+}
+
+.section2 .figure:hover .mask {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+.section2 .figure-title,
+.section2 .figure-caption {
+  opacity: 0;
+  transform: scale(10);
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  left: 20px;
+  width: 260px;
+  text-align: center;
+}
+
+.section2 .figure-title {
+  top: 30px;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.section2 .figure-caption {
+  top: 90px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.section2 .mask {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.section2 .info-link {
+  transition: 0.1s ease-in-out;
+  position: absolute;
+  top: 400px;
+  right: 50px;
+  width: 220px;
+  padding: 20px 10px;
+  background: #469cfd;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* =================
+  section3
+================= */
+.section3 .container {
+  text-align: center;
+}
+
+.section3 .box {
+  font-size: 16px;
+  color: white;
+  background: pink;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease-in-out;
+  display: table;
+}
+
+.section3 .box p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.section3 .trigger {
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  border: 5px solid gray;
+  background: #ccc;
+  margin: 30px 10px;
+  vertical-align: top;
+}
+
+.section3 .box1:hover {
+  transform: translate(0, 100px) rotate(360deg);
+}
+
+.section3 .trigger:hover .box2 {
+  transform: translate(0, 100px) rotate(360deg);
+}
+
+.section3 .trigger:hover .box3 {
+  transform: translate(0, 100px) rotate(360deg);
+  pointer-events: none;
+}
+
+.section3 .box4.js-click {
+  transform: translate(0, 100px) rotate(360deg);
+}
+
+/* =================
+  section4
+================= */
+.section4 {
+  background: #c37577;
+}
+
+.section4 p {
+  text-align: center;
+  color: white;
+}
+
+.section4 .container {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  position: relative;
+}
+
+.section4 .box {
+  width: 300px;
+  height: 300px;
+  background: white;
+  display: inline-block;
+  position: relative;
+  animation-name: toCircle;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section4 .box.js-click {
+  animation-play-state: paused;
+}
+
+@keyframes toCircle {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+}
+
+/* =================
+  section5
+================= */
+.section5 .container {
+  text-align: center;
+}
+
+.section5 p {
+  margin-top: 10px;
+  text-align: center;
+  color: #888;
+  animation: tenmetsu 0.7s linear infinite alternate;
+}
+
+.section5 .spinner {
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+  border-radius: 50%;
+  position: relative;
+  margin: 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.section5 .spinner:before, .section5 .spinner:after {
+  content: "";
+  display: block;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+}
+
+.section5 .spinner1:after,
+.section5 .spinner2:after {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+}
+
+.section5 .spinner1:after {
+  border: 4px solid transparent;
+  border-top-color: orange;
+  border-bottom-color: orange;
+  animation: spinny 1s linear infinite;
+}
+
+.section5 .spinner2:after {
+  border: 1px solid transparent;
+  border-top-color: turquoise;
+  border-bottom-color: turquoise;
+  animation: spinny2 1s linear infinite;
+}
+
+.section5 .spinner3 {
+  animation: spin 2s linear infinite;
+}
+
+.section5 .spinner3:before, .section5 .spinner3:after {
+  height: 20px;
+  width: 20px;
+  background: blue;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-radius: 0;
+}
+
+.section5 .spinner3:after {
+  top: auto;
+  bottom: -10px;
+  background: red;
+  border-radius: 50%;
+  animation: bouncy 0.5s ease-in infinite;
+}
+
+.section5 .spinner4 {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+.section5 .spinner4:after {
+  width: 2px;
+  height: 50px;
+  background: gray;
+  border-radius: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2px;
+  transform-origin: top center;
+  animation: spin 0.5s linear infinite;
+}
+
+.section5 .spinner4:before {
+  width: 4px;
+  height: 30px;
+  background: gray;
+  border-radius: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2px;
+  transform-origin: top center;
+  animation: spin 2s linear infinite;
+}
+
+.section5 .spinner5:before, .section5 .spinner5:after {
+  position: absolute;
+  top: 47%;
+  left: 46%;
+  margin-top: -50px;
+  margin-left: -50px;
+  background: orangered;
+}
+
+.section5 .spinner5:before {
+  animation: pulse 1.5s linear infinite;
+}
+
+.section5 .spinner5:after {
+  animation: pulse 1s linear infinite;
+}
+
+.section5 .spinner6 {
+  background: none;
+}
+
+.section5 .spinner6 span {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.section5 .spinner6 span:nth-child(1) {
+  left: -60px;
+  animation: bounce 0.9s ease-in infinite 0s;
+}
+
+.section5 .spinner6 span:nth-child(2) {
+  animation: bounce 0.9s ease-in infinite 0.3s;
+}
+
+.section5 .spinner6 span:nth-child(3) {
+  left: 60px;
+  animation: bounce 0.9s ease-in infinite 0.6s;
+}
+
+@keyframes tenmetsu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinny {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinny2 {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bouncy {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* =================
+  section6
+================= */
+.section6 {
+  background: black;
+}
+
+.section6 .container {
+  text-align: center;
+}
+
+.section6 .wrap {
+  display: inline-block;
+  padding: 20px 50px;
+  border: 8px double #0a0ab9;
+  border-radius: 5px;
+}
+
+.section6 .loader {
+  width: 300px;
+  height: 0;
+  border-top: 8px dotted #eee;
+  display: inline-block;
+  position: relative;
+}
+
+.section6 .loader:before, .section6 .loader:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border: 26px solid yellow;
+  border-radius: 50%;
+  border-right-color: transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  animation: move 3s linear infinite;
+}
+
+.section6 .loader.js-pakupaku:after {
+  border-color: yellow;
+}
+
+@keyframes move {
+  0%, 100% {
+    left: 0%;
+  }
+  49%, 50% {
+    left: 100%;
+  }
+  0%, 49% {
+    transform: rotateY(0deg);
+  }
+  50%, 100% {
+    transform: rotateY(180deg);
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-quiv="X-UA-Compatible" content="IE=edge">
+    <title>title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css"><!--[if lt IE 9]>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>CSS SAMPLES</h1>
+
+    <section class="section1">
+      <div class="container">
+        <p>hover me!!</p>
+        <ul>
+            <li class="component"><a href="" class="face" data-hover="C">C</a></li>
+            <li class="component"><a href="" class="face" data-hover="U">U</a></li>
+            <li class="component"><a href="" class="face" data-hover="B">B</a></li>
+            <li class="component"><a href="" class="face" data-hover="E">E</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section2">
+      <div class="container">
+        <div class="figure">
+            <img src="./images/nanamin.jpg" alt="nanamin" width="400" height="400">
+            <div class="mask">
+                <h3 class="figure-title">橋本奈々未</h3>
+                <p class="figure-caption">乃木坂46</p>
+                <a class="info-link">詳細はこちら！</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section3">
+      <div class="container">
+        <div class="trigger">
+          <div class="box1 box">
+            <p>box hover</p>
+          </div>
+          <!-- ブロック事態にホバー -->
+        </div>
+        <div class="trigger">
+          <div class="box2 box">
+            <p>trigger<br>hover</p>
+          </div>
+          <!-- トリガーまたはブロックにホバー -->
+        </div>
+        <div class="trigger">
+          <div class="box3 box">
+            <p>trigger<br>only<br>hover</p>
+          </div>
+          <!-- トリガーにホバー -->
+        </div>
+        <div class="trigger">
+          <div class="box4 box">
+            <p>click</p>
+          </div>
+          <!-- ブロックをクリック -->
+        </div>
+      </div>
+      <script>
+        $(function() {
+          $('.section3 .box4').on('click', function() {
+            $(this).toggleClass('js-click');
+          })
+        })
+      </script>
+    </section>
+
+    <section class="section4">
+      <p>クリックすると止まります</p>
+      <div class="container">
+        <div class="box"></div>
+      </div>
+      <script>
+        $(function() {
+          $('.section4 .box').on('click', function() {
+            $(this).toggleClass('js-click');
+          })
+        })
+      </script>
+    </section>
+
+    <section class="section5">
+      <div class="container">
+        <div class="spinner spinner1">
+          <p>loading...</p>
+        </div>
+        <div class="spinner spinner2">
+          <p>loading...</p>
+        </div>
+        <div class="spinner spinner3"></div>
+        <div class="spinner spinner4"></div>
+        <div class="spinner spinner5"></div>
+        <div class="spinner spinner6">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section6">
+      <div class="container">
+        <div class="wrap">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <script>
+        $(function() {
+          var $loader = $('.section6 .loader');
+          var isPakupaku = false;
+          setInterval(function() {
+            $loader.toggleClass('js-pakupaku');
+          }, 300);
+        })
+      </script>
+    </section>
+  </body>
+</html>
+<!--
+参考
+https://www.youtube.com/watch?v=8kK-cA99SA0
+https://www.youtube.com/watch?v=f1WMjDx4snI
+https://www.youtube.com/watch?v=lQxt6TdzsAo
+-->

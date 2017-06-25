@@ -1,0 +1,625 @@
+@charset "UTF-8";
+
+
+/* =================
+  bourbon
+================= */
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+
+
+/* =================
+  common
+================= */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  padding: 40px 0;
+}
+
+h1 {
+  color: white;
+  background: #5091C1;
+  text-align: center;
+  margin: 0;
+  font-size: 50px;
+  padding: 80px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  letter-spacing: 20px;
+}
+
+
+/* =================
+  section1
+================= */
+.section1 {
+
+  .container {
+      text-align: center;
+      color: white;
+  }
+
+  p {
+    color: turquoise;
+
+  }
+
+  .component {
+      display: inline-block;
+      line-height: 40px;
+      perspective: 500px; /* 遠近感を設定（ユーザとの距離らしいので、数値が小さいと近い = 遠近感が大きくなる */
+  }
+
+  .face {
+    display: inline-block;
+    width: 40px;
+    color: white;
+    text-decoration: none;
+    background: turquoise;
+    cursor: default;
+    transition: 0.3s;
+    transform-origin: center top; /* トランスフォームする原点を設定  transform-origin: 水平報告 垂直方向; */
+    transform-style: preserve-3d; /* デフォルトは2dなので3dにする。transformの表現に2dを使うか3dを使うか */
+    position: relative;
+
+    &:after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: darkcyan;
+        content: attr(data-hover); /* 「data-」は自分でつけた属性名。attr()を使えば、cssから属性にアクセスできる） */
+        transform: rotateX(-90deg);
+        transform-origin: center top;
+    }
+
+    &:hover,
+    &:focus {
+        transform: rotateX(90deg) translateY(-20px);/* rotateX()でx軸方向の回転, translateY()でy軸報告の移動 */
+
+      &:after {
+        background: lightseagreen;
+      }
+    }
+  }
+}
+
+
+/* =================
+  section2
+================= */
+.section2 {
+  background: #75c379;
+
+  img {
+    vertical-align: bottom;
+  }
+
+  .container {
+    width: 400px;
+    margin: 20px auto;
+    cursor: default;
+
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+  }
+
+  .figure {
+    position: relative;
+    color: white;
+    overflow: hidden;
+    float: left;
+    font-family: "Open Sans", sans-serif;
+
+
+    &:hover {
+
+      .figure-title,
+      .figure-caption {
+          opacity: 1;
+          transform: scale(1);
+      }
+
+      .figure-title {
+        transition-delay: 0.1s;
+      }
+
+      .figure-caption {
+        transition-delay: 0.2s;
+      }
+
+      .info-link {
+        top: 300px;
+        transition-delay: 0.4s;
+      }
+
+      .mask {
+        opacity: 1;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  .figure-title,
+  .figure-caption {
+    opacity: 0;
+    transform: scale(10);
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    left: 20px;
+    width: 260px;
+    text-align: center;
+  }
+
+  .figure-title {
+    top: 30px;
+      font-size: 50px;
+    font-weight: 600;
+  }
+
+  .figure-caption {
+    top: 90px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  .info-link {
+    transition: 0.1s ease-in-out;
+    position: absolute;
+    top: 400px;
+    right: 50px;
+    width: 220px;
+    padding: 20px 10px;
+    background: #469cfd;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+
+/* =================
+  section3
+================= */
+.section3 {
+
+  .container {
+    text-align: center;
+  }
+
+  .box {
+    font-size: 16px;
+    color: white;
+    background: pink;
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease-in-out;
+    display: table;
+
+    p {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .trigger {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border: 5px solid gray;
+    background: #ccc;
+    margin: 30px 10px;
+    vertical-align: top;
+  }
+
+  .box1 {
+    &:hover {
+      transform: translate(0, 100px) rotate(360deg);
+    }
+  }
+
+  .trigger {
+    &:hover {
+      .box2 {
+        transform: translate(0, 100px) rotate(360deg);
+      }
+
+      .box3 {
+        transform: translate(0, 100px) rotate(360deg);
+        pointer-events: none;
+      }
+    }
+  }
+
+
+  .box4.js-click {
+    transform: translate(0, 100px) rotate(360deg);
+  }
+}
+
+
+/* =================
+  section4
+================= */
+.section4 {
+  background: #c37577;
+
+  p {
+    text-align: center;
+    color: white;
+  }
+
+  .container {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .box {
+    width: 300px;
+    height: 300px;
+    background: white;
+    display: inline-block;
+    position: relative;
+    animation-name: toCircle; // アニメーション名
+    animation-duration: 1s; // 完了時間
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s; // 開始までの遅延時間
+    animation-iteration-count: infinite; // アニメーションする回数（数字または無限）
+    animation-direction: alternate; // アニメーションのサイクルを指定（alternate = 順行 -> 逆回転)
+    animation-fill-mode: forwards; // アニメーション完了後のスタイルを指定(forwards = 100%(from)のスタイルを維持)
+    animation-play-state: running; // pausedだと停止、runningだと再生
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .box.js-click {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes toCircle {
+  0% {
+    border-radius: 0;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+}
+
+
+/* =================
+  section5
+================= */
+.section5 {
+
+  .container {
+    text-align: center;
+  }
+
+  p {
+    margin-top: 10px;
+    text-align: center;
+    color: #888;
+    animation: tenmetsu 0.7s linear infinite alternate;
+  }
+
+  .spinner {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    border-radius: 50%;
+    position: relative;
+    margin: 50px;
+    display: inline-block;
+    vertical-align: top;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+    }
+  }
+
+  .spinner1,
+  .spinner2 {
+    &:after {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+    }
+  }
+
+  .spinner1 {
+    &:after {
+      border: 4px solid transparent;
+      border-top-color: orange;
+      border-bottom-color: orange;
+      animation: spinny 1s linear infinite;
+    }
+  }
+
+  .spinner2 {
+    &:after {
+      border: 1px solid transparent;
+      border-top-color: turquoise;
+      border-bottom-color: turquoise;
+      animation: spinny2 1s linear infinite;
+    }
+  }
+
+  .spinner3 {
+    animation: spin 2s linear infinite;
+
+    &:before,
+    &:after {
+      height: 20px;
+      width: 20px;
+      background: blue;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      margin-left: -10px;
+      border-radius: 0;
+    }
+
+    &:after {
+      top: auto;
+      bottom: -10px;
+      background: red;
+      border-radius: 50%;
+      animation: bouncy 0.5s ease-in infinite;
+    }
+  }
+
+  .spinner4 {
+    background: white;
+    border: 1px solid #ccc;
+
+    &:after {
+      width: 2px;
+      height: 50px;
+      background: gray;
+      border-radius: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -2px;
+      transform-origin: top center;
+      animation: spin 0.5s linear infinite;
+    }
+
+    &:before {
+      width: 4px;
+      height: 30px;
+      background: gray;
+      border-radius: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -2px;
+      transform-origin: top center;
+      animation: spin 2s linear infinite;
+    }
+  }
+
+  .spinner5 {
+    &:before,
+    &:after {
+      position: absolute;
+      top: 47%;
+      left: 46%;
+      margin-top: -50px;
+      margin-left: -50px;
+      background: orangered;
+
+    }
+
+    &:before {
+      animation: pulse 1.5s linear infinite;
+    }
+
+    &:after {
+      animation: pulse 1s linear infinite;
+    }
+  }
+
+  .spinner6 {
+    background: none;
+
+    span {
+      display: block;
+      height: 20px;
+      width: 20px;
+      background: #ccc;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      &:nth-child(1) {
+        left: -60px;
+        animation: bounce 0.9s ease-in infinite 0s;
+      }
+
+      &:nth-child(2) {
+        animation: bounce 0.9s ease-in infinite 0.3s;
+      }
+
+      &:nth-child(3) {
+        left: 60px;
+        animation: bounce 0.9s ease-in infinite 0.6s;
+      }
+    }
+
+  }
+}
+
+@keyframes tenmetsu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinny {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinny2 {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bouncy {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+
+/* =================
+  section6
+================= */
+.section6 {
+  background: black;
+
+  .container {
+    text-align: center;
+  }
+
+  .wrap {
+    display: inline-block;
+    padding: 20px 50px;
+    border: 8px double #0a0ab9;
+    border-radius: 5px;
+  }
+
+  .loader {
+    width: 300px;
+    height: 0;
+    border-top: 8px dotted #eee;
+    display: inline-block;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      border: 26px solid yellow;
+      border-radius: 50%;
+      border-right-color: transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      animation: move 3s linear infinite;
+    }
+  }
+
+  .loader.js-pakupaku {
+    &:after {
+      border-color: yellow;
+    }
+  }
+}
+
+@keyframes move {
+  0%, 100% {
+    left: 0%;
+  }
+  49%, 50% {
+    left: 100%;
+  }
+
+  0%, 49% {
+    transform: rotateY(0deg);
+  }
+  50%, 100% {
+    transform: rotateY(180deg);
+  }
+}
