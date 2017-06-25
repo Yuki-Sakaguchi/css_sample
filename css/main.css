@@ -685,16 +685,16 @@ h1 {
 
 .section5 .spinner6 span:nth-child(1) {
   left: -60px;
-  animation: bounce 0.9s ease-in infinite 0s;
+  animation: bounce 0.9s linear infinite 0s;
 }
 
 .section5 .spinner6 span:nth-child(2) {
-  animation: bounce 0.9s ease-in infinite 0.3s;
+  animation: bounce 0.9s linear infinite 0.3s;
 }
 
 .section5 .spinner6 span:nth-child(3) {
   left: 60px;
-  animation: bounce 0.9s ease-in infinite 0.6s;
+  animation: bounce 0.9s linear infinite 0.6s;
 }
 
 @keyframes tenmetsu {
